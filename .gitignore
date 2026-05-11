@@ -1,0 +1,30 @@
+# Entorno virtual
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Variables de entorno
+.env
+
+# Archivos generados por el RAG
+data/processed/
+indexes/
+
+# Hugging Face cache
+*.npy
+
+# VS Code
+.vscode/
+
+# Sistema
+.DS_Store
+Thumbs.db
