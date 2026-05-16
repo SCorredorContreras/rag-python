@@ -5,7 +5,7 @@ from pathlib import Path
 from fastapi import APIRouter
 from app.models.schemas import ChatRequest
 from app.core.embedding import generar_embedding
-from app.core.llm import generar_respuesta
+from app.core.llm import generate
 
 
 router = APIRouter()
@@ -43,15 +43,4 @@ def chat(payload: ChatRequest):
 
     contexto = "\n\n".join(r["text"] for r in resultados)
 
-    prompt = f"""Eres el chatbot oficial de Colombia Comparte. Responde en español natural y claro.
-Usa únicamente la información del contexto. No inventes datos.
-
-CONTEXTO:
-{contexto}
-
-PREGUNTA:
-{payload.query}
-
-RESPUESTA:"""
-
-    return {"answer": generar_respuesta(prompt)}
+    return {"answer": generate(payload.query, contexto)}

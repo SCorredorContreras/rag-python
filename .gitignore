@@ -19,9 +19,6 @@ build/
 data/processed/
 indexes/
 
-# Hugging Face cache
-*.npy
-
 # VS Code
 .vscode/
 

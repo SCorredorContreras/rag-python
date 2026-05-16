@@ -6,11 +6,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-app = FastAPI(title="Colombia Comparte RAG")
+app = FastAPI(title="Latinoamerica Comparte RAG")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3001"],
+    allow_origins=["http://localhost:5173", "http://localhost:3001"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
